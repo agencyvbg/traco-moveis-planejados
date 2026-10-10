@@ -1,3 +1,5 @@
+import { ProjectOpeningMotion } from './project-opening-motion';
+import { HoverLabel } from '@/components/ui/hover-label';
 import Link from 'next/link';
 import { projects, projectPath } from '@/content/projects';
 import { ResponsiveImage } from '@/components/media/responsive-image';
@@ -6,13 +8,14 @@ import './project-gallery.css';
 export function ProjectGallery() {
   return (
     <>
+      <ProjectOpeningMotion />
       <PageOpening
         id="collection-title"
         caption="Histórico dos projetos"
         title="Nosso olhar criativo define o que construímos."
       >
         <Link className="pill-link" href="/contato">
-          Vamos conversar ↗
+          <HoverLabel variant="primary">Vamos conversar</HoverLabel>
         </Link>
       </PageOpening>
       <div className="project-ticker" aria-hidden="true">
@@ -37,8 +40,12 @@ export function ProjectGallery() {
         aria-labelledby="collection-heading"
       >
         <div className="reference-heading">
-          <h2 id="collection-heading">Nossos novos projetos</h2>
-          <span className="reference-badge">Espaços sob medida</span>
+          <h2 id="collection-heading" data-title-anim="">
+            Nossos novos projetos
+          </h2>
+          <span className="reference-badge" data-floating-badge="">
+            Espaços sob medida
+          </span>
         </div>
         <div className="collection-grid">
           {projects.map((project, index) => (
@@ -53,7 +60,7 @@ export function ProjectGallery() {
               </Link>
               <div className="project-card-caption">
                 <Link href={projectPath(project)}>
-                  <h3>
+                  <h3 data-title-anim="">
                     {project.title} — {project.category}
                   </h3>
                 </Link>

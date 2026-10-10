@@ -13,7 +13,7 @@
   padding-bottom: 0;
   border-bottom: 0;
 }
-.blog-row > time {
+.blog-row-inner > time {
   flex: none;
   max-width: 190px;
   font-size: 20px;
@@ -94,4 +94,107 @@
   .blog-row-copy {
     gap: 24px;
   }
+}
+
+.blog-page .reference-opening {
+  padding-top: 184px;
+}
+.blog-page .reference-opening-copy {
+  max-width: 1680px;
+  margin-inline: auto;
+}
+.blog-page .reference-opening .section-kicker {
+  font:
+    600 30px/1 var(--font-body),
+    sans-serif;
+  text-transform: none;
+}
+.blog-page .reference-opening .section-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background: currentColor;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.blog-listing > .demo-note,
+.blog-row {
+  max-width: 1680px;
+  margin-inline: auto;
+}
+.blog-row {
+  display: block;
+}
+.blog-row-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 90%;
+}
+@media (min-width: 1440px) {
+  .blog-page .reference-opening {
+    padding-top: 273px;
+  }
+  .blog-page .reference-opening-circle {
+    width: 1212px;
+  }
+}
+@media (min-width: 1920px) {
+  .blog-row-inner {
+    max-width: 75%;
+  }
+}
+@media (max-width: 991px) {
+  .blog-page .reference-opening {
+    padding-top: 150px;
+  }
+  .blog-page .reference-opening-circle {
+    width: 90vw;
+  }
+  .blog-page .reference-opening .section-kicker {
+    font-size: 24px;
+  }
+  .blog-page .reference-opening .section-kicker::before {
+    width: 20px;
+    height: 20px;
+  }
+  .blog-row-inner {
+    max-width: none;
+  }
+}
+@media (max-width: 767px) {
+  .blog-page .reference-opening {
+    padding-top: 120px;
+  }
+  .blog-page .reference-opening .section-kicker {
+    font-size: 20px;
+  }
+  .blog-page .reference-opening .section-kicker::before {
+    width: 18px;
+    height: 18px;
+  }
+  .blog-row-inner {
+    gap: 24px;
+  }
+}
+@media (max-width: 479px) {
+  .blog-row-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .blog-page .reference-opening-circle {
+    width: 100vw;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .blog-row-image img {
+    transition: none;
+  }
+}
+
+.blog-opening-divider {
+  color: #000;
 }

@@ -1,3 +1,4 @@
+import { HoverLabel } from '@/components/ui/hover-label';
 import Link from 'next/link';
 import './contact.css';
 export function Contact() {
@@ -26,8 +27,17 @@ export function Contact() {
         </div>
       ))}
       <Link href="/contato" className="contact-button">
-        <span className="contact-button-text">Vamos conversar</span>
-        <i aria-hidden="true">→</i>
+        <span className="contact-button-gaps" aria-hidden="true">
+          <span className="contact-button-gap" />
+          <span className="contact-button-gap" />
+          <span className="contact-button-gap" />
+        </span>
+        <span className="contact-button-text">
+          <HoverLabel variant="cta">Vamos conversar</HoverLabel>
+        </span>
+        <span className="contact-button-icon" aria-hidden="true">
+          →
+        </span>
       </Link>
     </section>
   );

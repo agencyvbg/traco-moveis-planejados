@@ -24,6 +24,7 @@
   inset: 0 0 auto;
   border-radius: 20px;
   background: #ab9bff;
+  --button-surface: #ab9bff;
   overflow: hidden;
   transform-origin: 50% 50%;
 }
@@ -32,12 +33,15 @@
 }
 .environment-panel:nth-child(2) {
   background: #ff905f;
+  --button-surface: #ff905f;
 }
 .environment-panel:nth-child(3) {
   background: #ff767a;
+  --button-surface: #ff767a;
 }
 .environment-panel:nth-child(4) {
   background: #b8c56f;
+  --button-surface: #b8c56f;
 }
 .environment-copy {
   padding: 80px 60px;

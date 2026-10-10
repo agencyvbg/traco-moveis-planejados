@@ -9,10 +9,12 @@ export function AboutOpening() {
   return (
     <PageOpening
       id="about-title"
-      caption="Por dentro da Traço"
+      caption="Por dentro (da) Traço"
       title={
         <>
-          Um estúdio criativo que dá forma{' '}
+          <span data-about-title-text="">
+            Um estúdio criativo que dá forma{' '}
+          </span>
           <span className="reference-inline-image">
             <ResponsiveImage
               {...projects[0].images.detalhe}
@@ -20,12 +22,14 @@ export function AboutOpening() {
               sizes="150px"
             />
           </span>
-          a tudo que acontece no seu espaço.
+          <span data-about-title-text="">
+            a tudo que acontece no seu espaço.
+          </span>
         </>
       }
     >
       <div className="about-review">
-        <div>
+        <div className="about-review-avatars">
           {demoPortraits.slice(0, 3).map((image, index) => (
             <Image
               key={image.src}
@@ -36,12 +40,13 @@ export function AboutOpening() {
             />
           ))}
         </div>
-        <strong>4,9</strong>
-        <span>
-          <i aria-hidden="true">★★★★★</i>
-          <br />
-          Avaliação dos clientes
-        </span>
+        <div className="about-review-content">
+          <div className="about-review-top">
+            <strong>4,9</strong>
+            <i aria-hidden="true">★★★★★</i>
+          </div>
+          <span>Avaliação dos clientes</span>
+        </div>
       </div>
       <DemoNote>
         Avaliação e retratos demonstrativos da referência Ariyana.

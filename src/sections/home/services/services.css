@@ -121,7 +121,7 @@
 }
 
 .services .reference-heading h2 {
-  font-size: clamp(48px, 11.8vw, 240px);
+  font-size: var(--heading-large);
 }
 
 .service-image picture {
@@ -305,5 +305,42 @@
 @media (min-width: 1440px) {
   .service-page-opening {
     padding-top: 273px;
+  }
+}
+
+.services-list,
+.services > .reference-heading {
+  max-width: 1680px;
+  margin-inline: auto;
+}
+.service-page-opening {
+  max-width: 1920px;
+  margin-inline: auto;
+}
+@media (min-width: 1920px) {
+  .service-row {
+    padding-block: 100px;
+  }
+  .service-image {
+    flex-basis: 600px;
+  }
+  .service-opening-photo {
+    width: 210px;
+  }
+  .service-opening-circle {
+    width: 746px;
+  }
+}
+@media (max-width: 991px) {
+  .service-page-opening {
+    padding-top: 150px;
+  }
+}
+@media (max-width: 767px) {
+  .service-page-opening {
+    padding-top: 120px;
+  }
+  .service-opening-content h1 {
+    font-size: var(--heading-section);
   }
 }

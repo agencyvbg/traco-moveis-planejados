@@ -3,8 +3,18 @@ import { projects } from '@/content/projects';
 import { demoTeam, demoStats, demoWhy } from '@/content/ariyana-demo.team';
 import { ResponsiveImage } from '@/components/media/responsive-image';
 import { DemoNote } from '@/components/ui/demo-note';
-import { HorizontalRail } from '@/components/ui/horizontal-rail';
+import { AboutMotion } from './about-motion';
 import './about-details.css';
+export { AboutMotion };
+function counterColumns(number: string) {
+  let digit = 0;
+  return Array.from(number, (char, position) => ({
+    id: `${number}:${position}`,
+    char,
+    digit: /\d/.test(char) ? digit++ : -1,
+  }));
+}
+const counterSteps = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 export function AboutStats() {
   return (
     <section
@@ -27,7 +37,38 @@ export function AboutStats() {
         ].map((item, index) => (
           <article className="about-stats-card" key={item.number}>
             <p>{item.text}</p>
-            <strong>{item.number}</strong>
+            <strong className="about-counter">
+              <span className="tw:sr-only">{item.number}</span>
+              {counterColumns(item.number).map(({ char, digit, id }) =>
+                /\d/.test(char) ? (
+                  <span
+                    className={
+                      digit % 2
+                        ? 'counter-column counter-bottom'
+                        : 'counter-column counter-top'
+                    }
+                    key={id}
+                    aria-hidden="true"
+                  >
+                    {counterSteps.map((step) => (
+                      <span key={step}>
+                        {digit % 2
+                          ? step === 9
+                            ? char
+                            : step
+                          : step === 0
+                            ? char
+                            : step}
+                      </span>
+                    ))}
+                  </span>
+                ) : (
+                  <span className="counter-suffix" key={id} aria-hidden="true">
+                    {char}
+                  </span>
+                ),
+              )}
+            </strong>
             <Image
               src={demoStats[index]}
               alt=""
@@ -46,10 +87,12 @@ export function WhyChoose() {
   return (
     <section className="about-why section" aria-labelledby="why-title">
       <div className="about-why-heading">
-        <h2 id="why-title">Por que nos escolher</h2>
+        <h2 id="why-title" data-title-anim="">
+          Por que nos escolher
+        </h2>
         <div>
-          <h3>Somos os melhores</h3>
-          <p>
+          <h3 data-title-anim="">Somos os melhores</h3>
+          <p data-text-anim="">
             A referência apresenta um estúdio que une estratégia, marca e
             criação para apoiar empreendedores e empresas.
           </p>
@@ -58,25 +101,29 @@ export function WhyChoose() {
       <DemoNote>
         Prazos demonstrativos do Ariyana, sem compromisso comercial da Traço.
       </DemoNote>
-      <HorizontalRail>
-        {[
-          { title: 'Respondemos em', value: '24 horas' },
-          { title: 'Proposta em', value: '7 dias' },
-          { title: 'Fechamos em', value: '60 dias' },
-        ].map((item, index) => (
-          <article className="about-why-card" key={item.title}>
-            <span>{item.title}</span>
-            <h3>{item.value}</h3>
-            <Image
-              src={demoWhy[index]}
-              alt=""
-              className="about-why-decoration"
-              width={400}
-              height={400}
-            />
-          </article>
-        ))}
-      </HorizontalRail>
+      <div className="about-why-track">
+        <div className="about-why-stage">
+          <div className="about-why-items">
+            {[
+              { title: 'Respondemos em', value: '24 horas' },
+              { title: 'Proposta em', value: '7 dias' },
+              { title: 'Fechamos em', value: '60 dias' },
+            ].map((item, index) => (
+              <article className="about-why-card" key={item.title}>
+                <span>{item.title}</span>
+                <h3>{item.value}</h3>
+                <Image
+                  src={demoWhy[index]}
+                  alt=""
+                  className="about-why-decoration"
+                  width={400}
+                  height={400}
+                />
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
@@ -84,26 +131,34 @@ export function AboutTeam() {
   return (
     <section className="about-team section" aria-labelledby="team-title">
       <div className="reference-heading">
-        <h2 id="team-title">Especialistas</h2>
-        <span className="reference-badge">20 integrantes</span>
+        <h2 id="team-title" data-title-anim="">
+          Especialistas
+        </h2>
+        <span className="reference-badge" data-floating-badge="">
+          20 integrantes
+        </span>
         <DemoNote>Equipe demonstrativa do Ariyana.</DemoNote>
       </div>
-      <div className="about-team-grid">
-        {[
-          { name: 'Alex Newman', role: 'Cofundador e designer principal' },
-          { name: 'Leslie Alexander', role: 'Coordenadora de marketing' },
-          { name: 'Savannah Nguyen', role: 'Designer web' },
-          { name: 'Albert Flores', role: 'Assistente de desenvolvimento' },
-        ].map((item, index) => (
-          <article key={item.name}>
-            <Image
-              src={demoTeam[index]}
-              alt={`Retrato da equipe demonstrativa: ${item.name}`}
-            />
-            <h3>{item.name}</h3>
-            <p>{item.role}</p>
-          </article>
-        ))}
+      <div className="about-team-track">
+        <div className="about-team-stage">
+          <div className="about-team-grid">
+            {[
+              { name: 'Alex Newman', role: 'Cofundador e designer principal' },
+              { name: 'Leslie Alexander', role: 'Coordenadora de marketing' },
+              { name: 'Savannah Nguyen', role: 'Designer web' },
+              { name: 'Albert Flores', role: 'Assistente de desenvolvimento' },
+            ].map((item, index) => (
+              <article key={item.name}>
+                <Image
+                  src={demoTeam[index]}
+                  alt={`Retrato da equipe demonstrativa: ${item.name}`}
+                />
+                <h3>{item.name}</h3>
+                <p>{item.role}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -112,8 +167,12 @@ export function AboutAwards() {
   return (
     <section className="about-awards section" aria-labelledby="awards-title">
       <div className="reference-heading">
-        <h2 id="awards-title">Prêmios e troféus</h2>
-        <span className="reference-badge">Serviço cinco estrelas</span>
+        <h2 id="awards-title" data-title-anim="">
+          Prêmios e troféus
+        </h2>
+        <span className="reference-badge" data-floating-badge="">
+          Serviço cinco estrelas
+        </span>
         <DemoNote />
       </div>
       <div>
@@ -146,12 +205,16 @@ export function AboutLife() {
   return (
     <section className="about-life section" aria-labelledby="life-title">
       <div className="reference-heading">
-        <h2 id="life-title">Vida no estúdio</h2>
-        <p>Acompanhamos você do primeiro passo ao que vem depois.</p>
+        <h2 id="life-title" data-title-anim="">
+          Vida no estúdio
+        </h2>
+        <p data-text-anim="">
+          Acompanhamos você do primeiro passo ao que vem depois.
+        </p>
       </div>
-      <div className="about-life-images">
+      <div className="about-life-images" data-slide-cards="">
         {projects.slice(0, 4).map((project) => (
-          <div key={project.slug}>
+          <div key={project.slug} data-slide-card="">
             <ResponsiveImage
               {...project.images.angulo}
               alt={`${project.category} — ${project.title}`}

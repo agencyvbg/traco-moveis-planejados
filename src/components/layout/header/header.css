@@ -61,14 +61,15 @@
 }
 .nav-link-label > span {
   display: block;
-  transition: transform 0.35s;
+}
+.nav-link-label i {
+  display: inline-block;
+  font-style: normal;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .nav-link-label > span:last-child {
   position: absolute;
   inset: 100% 0 auto;
-}
-.desktop-nav > a:is(:hover, :focus-visible) .nav-link-label > span {
-  transform: translateY(-100%);
 }
 .desktop-nav > a:is(:hover, :focus-visible) .nav-link-circle {
   background: currentColor;
@@ -78,6 +79,9 @@
 }
 .menu-toggle-lines i {
   background: currentColor;
+}
+.desktop-nav > a:is(:hover, :focus-visible) .nav-link-label i {
+  transform: translateY(-100%);
 }
 @media (min-width: 1440px) {
   .brand {
@@ -126,7 +130,7 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .nav-link-label > span {
+  .nav-link-label i {
     transition: none;
   }
 }

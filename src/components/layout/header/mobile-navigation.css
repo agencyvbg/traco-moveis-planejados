@@ -12,6 +12,8 @@
   align-items: center;
   gap: 8px;
   transform: rotate(-45deg);
+  width: 32px;
+  transition: transform 0.5s ease;
 }
 .menu-toggle-lines i {
   display: block;
@@ -19,9 +21,13 @@
   height: 2px;
   border-radius: 999px;
   background: currentColor;
+  transition: width 0.5s ease;
 }
 .menu-toggle-lines i:nth-child(2) {
   width: 32px;
+}
+.menu-toggle:is(:hover, :focus-visible) .menu-toggle-lines {
+  transform: rotate(0deg);
 }
 .mobile-dialog {
   position: fixed;
@@ -224,6 +230,9 @@
     transform: translateY(-100%);
   }
 }
+.menu-toggle:is(:hover, :focus-visible) .menu-toggle-lines i {
+  width: 32px;
+}
 @media (min-width: 1440px) {
   .close-menu {
     top: 28px;
@@ -305,6 +314,8 @@
     animation: none;
   }
   .mobile-link-label > span,
+  .menu-toggle-lines,
+  .menu-toggle-lines i,
   .mobile-links a::before {
     transition: none;
   }

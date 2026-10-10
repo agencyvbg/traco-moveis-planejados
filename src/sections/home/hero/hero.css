@@ -210,3 +210,9 @@
 .hero-letter {
   display: inline-block;
 }
+
+@media (min-width: 1920px) {
+  .hero-content h2 {
+    font-size: 96px;
+  }
+}

@@ -20,9 +20,23 @@ export function DesktopNavigation() {
           aria-current={pathname === link.href ? 'page' : undefined}
         >
           <span className="nav-link-circle" aria-hidden="true" />
-          <span className="nav-link-label">
-            <span>{link.label}</span>
-            <span aria-hidden="true">{link.label}</span>
+          <span className="tw:sr-only">{link.label}</span>
+          <span className="nav-link-label" aria-hidden="true">
+            {[false, true].map((duplicate) => (
+              <span key={String(duplicate)}>
+                {Array.from(link.label).map((letter, index, letters) => (
+                  <i
+                    // biome-ignore lint/suspicious/noArrayIndexKey: Letters belong to a fixed navigation label and never reorder.
+                    key={`${letter}-${index}`}
+                    style={{
+                      transitionDelay: `${(index / Math.max(1, letters.length - 1)) * (duplicate ? 0.3 : 0.2)}s`,
+                    }}
+                  >
+                    {letter}
+                  </i>
+                ))}
+              </span>
+            ))}
           </span>
         </a>
       ))}

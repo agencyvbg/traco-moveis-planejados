@@ -1,3 +1,4 @@
+import { ServiceOpeningMotion } from './service-opening-motion';
 import { TitleReveal } from '@/animations/title-reveal';
 import { ResponsiveImage } from '@/components/media/responsive-image';
 import { projects } from '@/content/projects';
@@ -52,7 +53,9 @@ export function Services() {
     >
       <div className="reference-heading">
         <TitleReveal id="services-title" text="Soluções especializadas" />
-        <span className="reference-badge">Serviço cinco estrelas</span>
+        <span className="reference-badge" data-floating-badge="">
+          Serviço cinco estrelas
+        </span>
         <DemoNote>
           Serviços demonstrativos do Ariyana; não são a oferta comercial da
           Traço.
@@ -62,8 +65,8 @@ export function Services() {
         {services.map((item, index) => (
           <article key={item.title} className="service-row tw:flex">
             <div className="service-copy">
-              <h3>{item.title}</h3>
-              <p>Serviços incluídos:</p>
+              <h3 data-title-anim="">{item.title}</h3>
+              <p data-text-anim="">Serviços incluídos:</p>
               <div className="service-tags">
                 {item.tags.map((tag) => (
                   <span key={tag}>{tag}</span>
@@ -91,6 +94,7 @@ export function Services() {
 export function ServicesOpening() {
   return (
     <header className="service-page-opening">
+      <ServiceOpeningMotion />
       <div className="service-opening-circle" aria-hidden="true" />
       <div
         className="service-opening-circle service-opening-circle-top"
@@ -102,8 +106,9 @@ export function ServicesOpening() {
           Experiência <em>da</em> Traço
         </p>
         <h1>
-          Descubra a criatividade
-          <br />e nossa{' '}
+          <span data-service-title-text="">Descubra a criatividade</span>
+          <br />
+          <span data-service-title-text="">e nossa </span>
           <span className="service-opening-photo">
             <ResponsiveImage
               {...projects[1].images.detalhe}
@@ -113,7 +118,7 @@ export function ServicesOpening() {
               sizes="150px"
             />
           </span>{' '}
-          experiência
+          <span data-service-title-text="">experiência</span>
         </h1>
         <a
           className="service-opening-down"

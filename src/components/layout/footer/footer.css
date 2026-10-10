@@ -17,11 +17,59 @@
   gap: 44px;
 }
 .footer-links nav,
+.footer-information,
 .footer-contact {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+}
+.footer-information p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #ffffff80;
+}
+.footer-instagram {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.footer-instagram-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex: none;
+  border-radius: 8px;
+  color: #fff;
+  background: radial-gradient(
+    circle at 30% 100%,
+    #ffdc80 0%,
+    #fcaf45 20%,
+    #f77737 35%,
+    #e1306c 55%,
+    #c13584 70%,
+    #833ab4 90%
+  );
+}
+.footer-instagram-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.footer-google {
+  font-weight: 600;
+}
+.google-blue {
+  color: #4285f4;
+}
+.google-red {
+  color: #ea4335;
+}
+.google-yellow {
+  color: #fbbc05;
+}
+.google-green {
+  color: #34a853;
 }
 .footer-top h2 {
   font:
@@ -123,6 +171,7 @@
   text-transform: uppercase;
 }
 .footer-developer img {
+  filter: brightness(0) invert(1);
   width: 90px;
   height: auto;
 }
@@ -170,15 +219,42 @@
     margin-bottom: 100px;
   }
   .footer-links {
-    gap: 32px;
-    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    gap: 32px 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .footer-links > * {
+    min-width: 0;
+  }
+  .footer-links nav {
+    gap: 20px;
   }
   .footer-contact {
     grid-column: 1/-1;
+    width: 100%;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #ffffff33;
+    gap: 16px;
+  }
+  .footer-contact p {
+    max-width: none;
+  }
+  .footer-information {
+    grid-column: 1/-1;
+    width: 100%;
+    padding-top: 28px;
+    border-top: 1px solid #ffffff33;
+    gap: 20px;
+  }
+  .footer-newsletter {
+    width: 100%;
+    padding-top: 28px;
+    border-top: 1px solid #ffffff33;
   }
   .footer-links a,
   .footer-links button,
-  .footer-contact p {
+  .footer-contact p,
+  .footer-information p {
     font-size: 16px;
   }
   .footer-newsletter input {
@@ -197,9 +273,6 @@
   }
   .footer-links {
     grid-template-columns: 1fr 1fr;
-  }
-  .footer-contact {
-    grid-column: auto;
   }
   .footer-top {
     gap: 40px;

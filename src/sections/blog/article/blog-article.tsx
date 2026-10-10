@@ -13,12 +13,21 @@ export function BlogArticle({
   return (
     <article className="blog-article section">
       <header>
-        <span className="section-kicker">{article.date}</span>
-        <h1>{article.title}</h1>
-        <DemoNote>
-          Resumo demonstrativo do artigo da referência Ariyana. Imagens da
-          coleção Traço.
-        </DemoNote>
+        <div className="blog-article-date">
+          <span className="blog-article-date-circle" aria-hidden="true" />
+          <span data-text-anim="">{article.date}</span>
+        </div>
+        <h1 data-title-anim="">
+          {index === 0 ? (
+            <>
+              {article.title.split(': ')[0]}:
+              <br />
+              {article.title.split(': ')[1]}
+            </>
+          ) : (
+            article.title
+          )}
+        </h1>
       </header>
       <div className="blog-article-image">
         <ResponsiveImage
@@ -29,10 +38,14 @@ export function BlogArticle({
         />
       </div>
       <div className="blog-richtext">
-        <h2>Um olhar sobre a criação</h2>
-        <p>{article.summary}</p>
-        <h2>Qualidade e intenção</h2>
-        <p>
+        <DemoNote>
+          Resumo demonstrativo do artigo da referência Ariyana. Imagens da
+          coleção Traço.
+        </DemoNote>
+        <h2 data-title-anim="">Um olhar sobre a criação</h2>
+        <p data-text-anim="">{article.summary}</p>
+        <h2 data-title-anim="">Qualidade e intenção</h2>
+        <p data-text-anim="">
           A referência discute um trabalho criativo atento ao contexto, à
           identidade e à experiência das pessoas. A apresentação visual une
           tipografia marcante, composição e movimento.
@@ -40,8 +53,8 @@ export function BlogArticle({
         <blockquote>
           Criar uma experiência começa por compreender quem vai usá-la.
         </blockquote>
-        <h2>Dentro do tema</h2>
-        <p>
+        <h2 data-title-anim="">Dentro do tema</h2>
+        <p data-text-anim="">
           Este resumo ocupa a estrutura editorial do artigo para demonstrar a
           composição da página. O texto definitivo da Traço poderá ser incluído
           nesta mesma estrutura.
@@ -53,8 +66,8 @@ export function BlogArticle({
             sizes="70vw"
           />
         </div>
-        <h2>Ideias que ganham forma</h2>
-        <p>
+        <h2 data-title-anim="">Ideias que ganham forma</h2>
+        <p data-text-anim="">
           O objetivo da demonstração é mostrar como título, imagens, texto e
           destaques convivem na leitura, mantendo a linguagem visual da
           referência.

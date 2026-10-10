@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { whatsappUrl } from '@/config/contact';
 import { Arrow } from './arrow';
+import { HoverLabel } from './hover-label';
 import './whatsapp-link.css';
 
 type Props = { children: ReactNode; context?: string; className?: string };
@@ -18,7 +19,11 @@ export function WhatsAppLink({
       rel="noopener noreferrer"
       title="Conversar pelo WhatsApp (abre em nova aba)"
     >
-      {children}
+      {typeof children === 'string' ? (
+        <HoverLabel>{children}</HoverLabel>
+      ) : (
+        children
+      )}
       <Arrow />
       <span className="whatsapp-link-hint tw:absolute tw:w-[1px] tw:h-[1px] tw:overflow-hidden tw:whitespace-nowrap">
         {' '}

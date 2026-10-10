@@ -5,7 +5,7 @@
   justify-content: center;
   gap: 8px;
 }
-.about-review > div {
+.about-review-avatars {
   display: flex;
   margin-right: 16px;
 }
@@ -28,4 +28,118 @@
   color: #ff691e;
   font-style: normal;
   font-size: 20px;
+}
+
+/* Published Ariyana About opening; isolated from other page openings. */
+.about-page .reference-opening {
+  padding-top: 184px;
+}
+.about-page .reference-opening-copy {
+  gap: 0;
+  max-width: 1680px;
+  margin-inline: auto;
+}
+.about-page .reference-opening h1 {
+  margin: 48px 0;
+}
+.about-page .reference-opening .section-kicker {
+  font:
+    600 30px/1 var(--font-body),
+    sans-serif;
+  text-transform: none;
+}
+.about-page .reference-opening .section-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.about-page .reference-inline-image {
+  height: auto;
+  aspect-ratio: 95/44;
+}
+.about-page .reference-opening .demo-note {
+  margin-top: 32px;
+}
+.about-review strong {
+  font:
+    700 24px/1 var(--font-body),
+    sans-serif;
+}
+.about-review img {
+  width: 56px;
+  height: 56px;
+}
+@media (min-width: 1440px) {
+  .about-page .reference-opening {
+    padding-top: 273px;
+  }
+  .about-page .reference-opening-circle {
+    width: 1212px;
+  }
+}
+@media (min-width: 1920px) {
+  .about-page .reference-inline-image {
+    width: 210px;
+  }
+}
+@media (max-width: 991px) {
+  .about-page .reference-opening {
+    padding-top: 150px;
+  }
+  .about-page .reference-opening-circle {
+    width: 90vw;
+  }
+  .about-page .reference-opening .section-kicker {
+    font-size: 24px;
+  }
+  .about-page .reference-opening .section-kicker::before {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .about-page .reference-opening {
+    padding-top: 120px;
+  }
+  .about-page .reference-opening .section-kicker {
+    font-size: 20px;
+  }
+  .about-page .reference-opening .section-kicker::before {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (max-width: 479px) {
+  .about-page .reference-opening-circle {
+    width: 100vw;
+  }
+}
+
+.about-review-avatars {
+  max-width: 150px;
+  margin-right: 0;
+}
+.about-review-content {
+  text-align: left;
+  font-size: 16px;
+}
+.about-review-top {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+@media (max-width: 479px) {
+  .about-review-avatars {
+    max-width: 120px;
+  }
+  .about-review img {
+    width: 48px;
+    height: 48px;
+  }
 }

@@ -46,7 +46,7 @@ export function HeroEntrance() {
               yPercent: 0,
               duration: 1,
               stagger: { amount: 0.5 },
-              ease: 'expo.inOut',
+              ease: 'back.inOut',
             },
             2.57,
           )
@@ -56,7 +56,7 @@ export function HeroEntrance() {
               yPercent: 0,
               duration: 1,
               stagger: { amount: 0.5 },
-              ease: 'expo.inOut',
+              ease: 'back.inOut',
             },
             3.46,
           )

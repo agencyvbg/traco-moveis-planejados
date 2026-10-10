@@ -123,7 +123,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
 }
 .about-team-grid article:nth-child(2) {
   margin-top: 100px;
@@ -355,4 +355,245 @@
   .about-why-decoration {
     width: 150px;
   }
+}
+
+/* About-specific tracks match Ariyana: width collapse, not horizontal scrolling. */
+.about-page .about-stats-grid,
+.about-page .about-why-heading,
+.about-why-track,
+.about-team-track,
+.about-page .about-awards > div,
+.about-page .about-life-images {
+  max-width: 1680px;
+  margin-inline: auto;
+}
+.about-why-track,
+.about-team-track {
+  height: 300vh;
+}
+.about-why-stage,
+.about-team-stage {
+  height: 100vh;
+  position: sticky;
+  top: 10vh;
+}
+.about-why-items {
+  display: flex;
+  gap: 16px;
+}
+.about-why-card {
+  width: 100%;
+}
+.about-why-card h3 {
+  font-size: 40px;
+  letter-spacing: -0.01em;
+}
+.about-why-heading h2 {
+  font-size: var(--heading-medium);
+  max-width: none;
+  letter-spacing: -0.01em;
+}
+.about-why-heading h3 {
+  font:
+    600 24px/1.3 var(--font-body),
+    sans-serif;
+  text-transform: none;
+}
+.about-team {
+  padding-top: var(--section-space);
+  padding-bottom: 0;
+}
+.about-team-grid img {
+  aspect-ratio: auto;
+}
+.about-counter {
+  height: var(--heading-section);
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.counter-column {
+  display: block;
+  flex: none;
+}
+.counter-column > span {
+  display: block;
+  height: var(--heading-section);
+  line-height: 1;
+}
+.counter-top {
+  align-self: flex-start;
+}
+.counter-bottom {
+  align-self: flex-end;
+}
+.counter-suffix {
+  flex: none;
+}
+.about-stats-card:nth-child(4) .about-stats-decoration {
+  bottom: auto;
+  top: 0;
+}
+.about-award-row {
+  isolation: isolate;
+  transition: color 0.25s ease;
+}
+.about-award-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #121212;
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.about-award-row:hover {
+  padding-inline: 0;
+  background: transparent;
+}
+.about-award-row:hover::before {
+  transform: scaleY(1);
+  transition-duration: 0.75s;
+}
+.about-award-row > strong {
+  transition: transform 0.5s ease;
+}
+.about-award-row:hover > strong:first-child {
+  transform: translateX(1em);
+}
+.about-award-row:hover > strong:last-child {
+  transform: translateX(-1em);
+}
+.about-life .reference-heading h2 {
+  font-size: var(--heading-section);
+  letter-spacing: -0.01em;
+}
+.about-life .reference-heading {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.about-life .reference-heading p {
+  max-width: 321px;
+  margin: 0;
+}
+@media (min-width: 1440px) {
+  .about-team-grid {
+    gap: 40px;
+  }
+  .about-life-images {
+    padding-top: 73px;
+  }
+}
+@media (min-width: 1920px) {
+  .about-stats-card {
+    min-height: 430px;
+    padding: 48px;
+  }
+  .about-life-images {
+    padding-top: 65px;
+  }
+  .about-life-images > div:nth-child(2) {
+    margin-top: -5vw;
+    margin-left: -6vw;
+  }
+  .about-life-images > div:nth-child(3),
+  .about-life-images > div:nth-child(4) {
+    margin-left: -6vw;
+  }
+}
+@media (max-width: 991px) {
+  .about-why-track,
+  .about-team-track {
+    height: auto;
+  }
+  .about-why-stage,
+  .about-team-stage {
+    height: auto;
+    position: static;
+  }
+  .about-why-items {
+    flex-wrap: wrap;
+  }
+  .about-why-card {
+    width: auto;
+    flex: 200px;
+  }
+  .about-why-card h3 {
+    font-size: 40px;
+  }
+  .about-why-card > span {
+    top: 20px;
+    left: 20px;
+  }
+  .about-why-decoration {
+    width: 93px;
+  }
+  .about-team {
+    padding-bottom: var(--section-space);
+  }
+  .about-stats-card {
+    min-height: auto;
+  }
+  .about-stats-card p {
+    margin-bottom: 48px;
+  }
+  .about-life .reference-heading {
+    flex-wrap: wrap;
+  }
+  .about-life-images {
+    padding-top: 0;
+  }
+}
+@media (max-width: 767px) {
+  .about-team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+@media (max-width: 479px) {
+  .about-why-card {
+    flex-basis: 160px;
+  }
+  .about-why-card > span {
+    top: 20px;
+    left: 16px;
+    right: 16px;
+  }
+  .about-team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+  .about-life .reference-heading p {
+    max-width: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-why-track,
+  .about-team-track {
+    height: auto;
+  }
+  .about-why-stage,
+  .about-team-stage {
+    height: auto;
+    position: static;
+  }
+  .about-why-items {
+    flex-wrap: wrap;
+  }
+  .about-why-card {
+    flex: 1 1 240px;
+  }
+  .about-award-row,
+  .about-award-row::before,
+  .about-award-row > strong {
+    transition: none;
+  }
+}
+
+.reference-divider-awards {
+  color: #f9ebe4;
 }

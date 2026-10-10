@@ -30,7 +30,9 @@ export function Process() {
     >
       <div className="process-heading">
         <TitleReveal id="process-title" text="Avaliar, implementar e operar" />
-        <p>Acompanhamos você do primeiro passo ao que vem depois.</p>
+        <p data-text-anim="">
+          Acompanhamos você do primeiro passo ao que vem depois.
+        </p>
         <small className="demo-note">
           Demonstração — processo da referência Ariyana
         </small>

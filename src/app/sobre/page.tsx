@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { AboutOpening } from '@/sections/about/opening/about-opening';
 import {
+  AboutMotion,
   AboutStats,
   WhyChoose,
   AboutTeam,
@@ -39,6 +40,7 @@ export default function AboutPage() {
       className="page-content tw:relative tw:bg-paper about-page"
       tabIndex={-1}
     >
+      <AboutMotion />
       <AboutOpening />
       <AboutStats />
       <WhyChoose />
@@ -46,6 +48,14 @@ export default function AboutPage() {
       <Trust />
       <Leaders />
       <AboutAwards />
+      <div
+        className="reference-divider reference-divider-awards"
+        aria-hidden="true"
+      >
+        {[0, 1, 2, 3, 4].map((n) => (
+          <i key={n} />
+        ))}
+      </div>
       <AboutLife />
       <Contact />
     </main>

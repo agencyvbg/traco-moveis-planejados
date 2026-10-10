@@ -12,12 +12,18 @@ export function Testimonials() {
     >
       <div className="reference-heading">
         <TitleReveal id="testimonials-title" text="O que dizem os clientes" />
-        <span className="reference-badge">Serviço cinco estrelas</span>
+        <span className="reference-badge" data-floating-badge="">
+          Serviço cinco estrelas
+        </span>
         <DemoNote />
       </div>
-      <div className="testimonial-cards">
+      <div className="testimonial-cards" data-slide-cards="">
         {testimonials.map((item, index) => (
-          <article key={item.name} className="testimonial-card">
+          <article
+            key={item.name}
+            className="testimonial-card"
+            data-slide-card=""
+          >
             <div
               className="testimonial-stars"
               role="img"

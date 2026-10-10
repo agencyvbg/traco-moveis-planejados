@@ -1,4 +1,58 @@
+## Artigos — proporção e entradas
+
+Usar medidas da folha publicada: header1000px, imagem principal12/5 com margens100px; mobile3/2, margens28/44px. Abertura184px/273px,tablet150px,mobile120px. Aplicar controlador existente a títulos, data e parágrafos. Preservar conteúdo e imagem secundária local.
+
+## Blog — faixas após abertura
+
+Adicionar cinco faixas pretas decrescentes abaixo da abertura e antes da listagem, reutilizando o divisor responsivo existente.
+
+## Blog — abertura e listagem
+
+Abertura273px em telas1440+,184px desktop,150px tablet,120px mobile; etiqueta com círculo e entrada por caracteres. Títulos e datas da listagem com entrada existente. Separar wrapper de borda e conteúdo90% (75% em1920+), container1680px. Preservar imagens17/12 e conteúdo local.
+
+## Serviços — entradas e proporções da Ariyana
+
+Adicionar abertura por caracteres e escala da imagem inline, entrada do subtítulo dos serviços. Restaurar título principal heading-large, container1680px, cards100px de padding e mídia600px no breakpoint1920. Abertura150px tablet/120px mobile. Preservar mídia local e indicação de vídeos pendentes.
+
+## Works / Projetos
+
+Reproduzir abertura da Works: padding184px (273px >=1440), título24ch, caption30px com círculo, botão primário. Entrada por caracteres back.inOut. Faixa laranja com tipografia128px máxima e loop contínuo. Coleção limitada1680px, imagens quadradas, gap36px (60px >=1440), offsets80px pares. Aplicar entrada de títulos e badge sem trocar conteúdo Traço.
+
+## Galeria Vida — interações individuais
+
+Reproduzir ações publicadas a-73 a a-80: offsets por card [0,7,5,5], [2,0,2,2], [-15,-8,0,10], [-10,-8,-10,0] em vw. Hover escala 1.1, rotação 0, 800ms back.out. Saída restaura escala e deslocamentos em 600ms; rotação usa ease. Limpar tweens e eventos ao desmontar.
+
+## Transição após prêmios
+
+Adicionar as cinco faixas decrescentes existentes no sistema, na cor #f9ebe4 da seção de prêmios, antes da galeria Vida no estúdio, conforme About da Ariyana.
+
+## Cards da equipe — correção da posição final
+
+Comparação visual com /about-us: cards entram sequencialmente de yPercent 100 e terminam em 0. A escada de 100/200/300px pertence às margens; grid usa stretch, não start. Preservar track 300vh, sticky 10%, scrub 0.8 e fluxo estático no mobile.
+
+## About — fidelidade à página publicada da Ariyana
+
+Reproduzir medidas, abertura por caracteres, contador em colunas, cartões que reduzem a largura durante a rolagem (sem deslocamento horizontal), equipe em estágio sticky com entrada sequencial, galeria com entrada e afastamento no hover, e preenchimento vertical dos prêmios. Desktop usa tracks de 300vh, sticky a 10%, scrub 0.8; até 991px as seções voltam ao fluxo normal. Manter conteúdo e recursos locais da Traço e avisos demonstrativos existentes. Validar /sobre em desktop e mobile, navegação e limpeza das animações.
+
+Fidelidade integral da apresentação Ariyana: restaurar escala original do título (sem redução de 10%), largura máxima de 29ch, tracking -0,01em, margem superior de 40 px e inferior de 32 px. Container central de até 1680 px com 5% de respiro lateral; etiqueta em DM Sans 600/30 px e círculo de 28 px, com reduções responsivas da referência. Imagem de 350 px no desktop e 449 px a partir de 1920 px. Preservar conteúdo da Traço, nota demonstrativa, botão e revelação das palavras.
+
+Redução visual aprovada do título de apresentação: diminuir o font-size em 10% em todas as telas, mantendo a largura proporcional já ajustada. No desktop de 1920 px, passar de 84 px para 75,6 px. Preservar conteúdo e animação.
+
+Apresentação abaixo do hero: remover o teto fixo de 820 px da coluna. O título deve ocupar até 29ch com a mesma escala heading-medium da referência, sem alterar texto ou animação. Medir fonte e largura nas mesmas viewports para distinguir tamanho de fonte de quebra de linha.
+
+Hero e rodapé: remover o botão WhatsApp do rodapé conforme solicitado. Igualar o subtítulo do hero à referência: 96 px a partir de 1920 px; manter 6vw no desktop menor, 8vw no tablet e 44 px no celular, como na Ariyana. Preservar texto, fontes e animação de entrada.
+
+Isolamento dos caracteres animados: usar spans com classe própria, separados do ícone circular do CTA. O tamanho, o fundo e o arredondamento do ícone jamais devem alcançar as letras, inclusive durante o hover e navegação entre páginas. Comparar botão principal, secundário e CTA com a referência em repouso e em movimento.
+
+Consistência dos botões: aplicar a troca de letras também aos CTAs de contato, WhatsApp e newsletter. CTA grande mantém a escala de 0,9 no hover e stagger de 0,6 s da referência. Preservar variantes de tamanho, ações de formulário e botões funcionais de menu, vídeo e acordeões.
+
+## Botões e links do rodapé — referência Ariyana
+
+Reproduzir as duas variantes: botão principal com Bebas Neue 24 px, traço de 25 px, borda de 2 px e pequenos recortes; variante secundária com DM Sans e espaçamento de 20 px. Letras duplicadas com troca vertical por caractere e tempos da referência. Rodapé usa duas linhas de texto com stagger de 0,2/0,3 s, sem reversão ao sair. Preservar destinos, conteúdo, paleta e revelação do rodapé. Oferecer o mesmo efeito por foco de teclado, movimento reduzido e limpeza ao desmontar.
+
 # Traço — estudo conceitual
+
+Entradas de todas as seções (09/10/2026): auditar todos os elementos, reproduzindo os alvos da Ariyana sem acrescentar fade genérico. Títulos: caracteres mascarados de -100% a 0, 1s, stagger total 0,5s, back.inOut. Parágrafos: 0,8s, atraso 0,2s, stagger total 0,4s, power3.out. Gatilho top 90%, uma execução por visita. Badges: opacity 0→1 e scale 0,5→1, 0,6s, back.out, após 1s. Depoimentos: cards de 100vw/40 graus, 1s, stagger 0,4s, back.out, top center, apenas acima de 991px. Preservar scrubs do estúdio, projetos, vídeo e círculo de fotos, assim como os elementos estáticos da referência. Sem mudanças em textos, cores, dimensões ou navegação. Movimento reduzido, SSR legível e limpeza nas rotas obrigatórios.
 
 Organização híbrida autorizada: usar classes Tailwind com prefixo `tw:` para propriedades simples de layout, alinhamento, dimensões e espaçamentos fixos. Manter CSS por seção para composição fluida (clamp/calc), tipografia editorial, estados, seletores contextuais e efeitos de rolagem. Expor os tokens existentes ao tema Tailwind, sem duplicar cores. Comparar estilos calculados antes/depois e revisar largura/altura de telas variadas. Preservar funcionamento, conteúdo, navegação e animações ao corrigir problemas de responsividade.
 
@@ -99,3 +153,16 @@ Correção de recarga por âncora — aguardar as fontes e a conclusão da corti
 Correção solicitada — a recarga da home sempre executa a cortina e inicializa a entrada do hero, inclusive com âncora ou posição restaurada. Líderes mantém o leque enquanto a seção está visível: gatilho usa a seção estável, e a saída não recolhe as imagens antes de elas deixarem a tela.
 
 Líderes em notebook — altura mínima considera o diâmetro real da órbita (76vw mais 160px de respiro), não somente 150vh. Tablet/celular também acomodam as fotos e a legenda; legenda fica 32px acima da base. Evitar cortes na borda da seção e sobreposição com depoimentos.
+
+# Header da Traço — efeitos da Ariyana (2026-10-09)
+
+Detalhes de projeto — 2026-10-10: reproduzir a estrutura de Floral Botanical Matt Business Card: abertura 184/273px, capa de largura total 192/65, duas fotos 9/10 deslocadas, indicadores em h5 com contador vertical, segunda panorâmica 12/5, frase central em quatro linhas com máscara vinculada ao scroll, resultado rosado com texto e três imagens sticky (80px), fotos 81/70. Preservar conteúdo, recursos locais, navegação e identificação das métricas demonstrativas. Desativar movimento decorativo em reduced motion.
+
+Auditoria dos artigos — 2026-10-10: comparar cabeçalho editorial de 1000px, título h4 sem limite em caracteres, espaçamento a partir do topo da página e imagem 12/5 (3/2 somente até 479px). Parágrafos 20px/1,5, citação em fonte display com borda preta de 2px. Preservar imagens e avisos demonstrativos, posicionando o aviso fora do cabeçalho para não alterar sua composição. Verificar os quatro títulos em desktop e celular.
+
+Reproduzir a troca vertical de letras com atraso progressivo nos links do header e o giro do toggle de -45° para 0°, expandindo as duas linhas curtas até a largura da central. Manter a composição, links, abertura e fechamento do menu. Aplicar também ao foco de teclado e respeitar a preferência por movimento reduzido.
+
+Cabeçalho dos artigos: data em DM Sans 600, 30px, com círculo preto de 28px e gap de 10px; título com tracking -0,01em e quebra equilibrada para evitar uma palavra isolada na última linha. Data responsiva de 24/20px, círculos 20/18px.
+Detalhes em telas largas: aplicar contêiner máximo de 1680px a abertura, narrativa, dupla de fotos, indicadores e resultado. Capa e panorâmica continuam ocupando a largura completa. A confirmação anterior em 1536px não cobria esse limite.
+Footer: substituir utilitários por Instagram da Traço com ícone, perfil no Google com letras nas cores da marca e cuidados com seus móveis. Por solicitação do usuário, os três itens são textos sem links enquanto os destinos não forem definidos.
+Footer mobile: contato ocupa largura completa; duas colunas para navegação e projetos/artigos; informações em largura completa; divisórias entre blocos, textos sem links preservados e sem novo CTA. Manter fundo preto da Traço.

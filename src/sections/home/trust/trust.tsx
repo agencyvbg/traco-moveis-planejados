@@ -20,7 +20,7 @@ export function Trust() {
           </div>
         </div>
         <div className="trust-quote">
-          <blockquote>
+          <blockquote data-text-anim="">
             “Ágeis no suporte, fáceis de trabalhar e totalmente dedicados a
             lançar nosso site no prazo e dentro do orçamento.”
           </blockquote>

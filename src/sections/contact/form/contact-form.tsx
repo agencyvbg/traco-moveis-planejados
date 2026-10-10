@@ -1,4 +1,6 @@
 'use client';
+import { HoverLabel } from '@/components/ui/hover-label';
+
 import { useState, type FormEvent, type KeyboardEvent } from 'react';
 import { contactFormUrl } from '@/config/contact';
 import './contact-form.css';
@@ -146,7 +148,7 @@ export function ContactForm() {
               Abra o WhatsApp com seus dados e confirme o envio da mensagem.
             </small>
             <button type="submit" className="pill-link">
-              Continuar no WhatsApp ↗
+              <HoverLabel variant="v2">Continuar no WhatsApp</HoverLabel>
             </button>
           </div>
           {draftUrl && (

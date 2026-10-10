@@ -7,6 +7,7 @@ import { ConsentManager } from '@/components/analytics/consent';
 import { siteMetadata } from '@/config/metadata';
 import { AnchorNavigation } from '@/components/layout/anchor-navigation';
 import { PageTransition } from '@/components/layout/page-transition/page-transition';
+import { SectionEntrances } from '@/animations/section-entrances';
 import '@/styles/globals.css';
 
 export const viewport: Viewport = { themeColor: '#121212' };
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </div>
         <Footer />
         <AnchorNavigation />
+        <SectionEntrances />
         <ConsentManager />
       </body>
     </html>

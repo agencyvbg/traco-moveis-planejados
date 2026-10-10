@@ -106,3 +106,96 @@
     grid-template-columns: 1fr;
   }
 }
+
+.projects-page .reference-opening {
+  padding-top: 184px;
+}
+.projects-page .reference-opening-copy {
+  max-width: 1680px;
+  margin-inline: auto;
+}
+.projects-page .reference-opening h1 {
+  max-width: 24ch;
+}
+.projects-page .reference-opening .section-kicker {
+  font:
+    600 30px/1 var(--font-body),
+    sans-serif;
+  text-transform: none;
+}
+.projects-page .reference-opening .section-kicker::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.projects-page .project-ticker {
+  background: #ff691e;
+  color: #121212;
+  padding: 16px 0;
+}
+.projects-page .project-ticker span {
+  font-size: var(--heading-section);
+  letter-spacing: -0.01em;
+  margin-right: 60px;
+}
+.project-collection > .reference-heading,
+.collection-grid {
+  max-width: 1680px;
+  margin-inline: auto;
+}
+@media (min-width: 1440px) {
+  .projects-page .reference-opening {
+    padding-top: 273px;
+  }
+  .projects-page .reference-opening-circle {
+    width: 1212px;
+  }
+  .collection-grid {
+    column-gap: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .projects-page .reference-opening {
+    padding-top: 150px;
+  }
+  .projects-page .reference-opening-circle {
+    width: 90vw;
+  }
+  .projects-page .reference-opening .section-kicker {
+    font-size: 24px;
+  }
+  .projects-page .reference-opening .section-kicker::before {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .projects-page .reference-opening {
+    padding-top: 120px;
+  }
+  .projects-page .reference-opening .section-kicker {
+    font-size: 20px;
+  }
+  .projects-page .reference-opening .section-kicker::before {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (max-width: 479px) {
+  .projects-page .reference-opening-circle {
+    width: 100vw;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-ticker > div {
+    animation: none;
+  }
+  .project-card-image img {
+    transition: none;
+  }
+}

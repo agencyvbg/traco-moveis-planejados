@@ -29,7 +29,7 @@ export default async function ArticlePage({
   return (
     <main
       id="conteudo"
-      className="page-content tw:relative tw:bg-paper"
+      className="page-content tw:relative tw:bg-paper article-page"
       tabIndex={-1}
     >
       <BlogArticle article={articles[index]} index={index} />

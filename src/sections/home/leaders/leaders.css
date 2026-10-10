@@ -146,7 +146,7 @@
   .leaders-copy .pill-link {
     position: relative;
     min-height: 56px;
-    padding: 12px 24px 12px 48px;
+    padding: 18px 28px;
     border: 2px solid #121212;
     font:
       22px/1 var(--font-display),
@@ -154,15 +154,6 @@
     text-transform: uppercase;
     min-width: 158px;
     justify-content: center;
-  }
-  .leaders-copy .pill-link::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background: #121212;
-    left: 20px;
-    top: 50%;
   }
 }
 @media (max-width: 479px) {
@@ -201,22 +192,13 @@
     position: relative;
     min-height: 72px;
     min-width: 220px;
-    padding: 16px 28px 16px 64px;
+    padding: 23px 40px;
     border: 2px solid #121212;
     font:
       24px/1 var(--font-display),
       sans-serif;
     text-transform: uppercase;
     justify-content: center;
-  }
-  .leaders-copy .pill-link::before {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background: #121212;
-    left: 28px;
-    top: 50%;
   }
 }
 @media (min-width: 1920px) {

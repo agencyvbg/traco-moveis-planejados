@@ -47,9 +47,12 @@
   border-radius: 999px;
   background: #eaffb1;
   white-space: nowrap;
-  transition: background 0.3s;
+  transition:
+    background 0.3s,
+    transform 0.31s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-.contact-button:hover {
+.contact-button:is(:hover, :focus-visible) {
+  transform: translate(-50%, -50%) scale(0.9);
   background: #fdbc53;
 }
 .contact-button-text {
@@ -58,7 +61,7 @@
   line-height: 1;
   text-transform: uppercase;
 }
-.contact-button i {
+.contact-button-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,7 +85,7 @@
   .contact-button-text {
     font-size: 32px;
   }
-  .contact-button i {
+  .contact-button-icon {
     width: 50px;
     height: 50px;
     font-size: 32px;
@@ -96,7 +99,7 @@
   .contact-button-text {
     font-size: 28px;
   }
-  .contact-button i {
+  .contact-button-icon {
     width: 40px;
     height: 40px;
     font-size: 24px;
@@ -110,9 +113,39 @@
   .contact-button-text {
     font-size: 22px;
   }
-  .contact-button i {
+  .contact-button-icon {
     width: 28px;
     height: 28px;
     font-size: 20px;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-button {
+    transition: none;
+  }
+  .contact-button:is(:hover, :focus-visible) {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.contact-button-gaps {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.contact-button-gap {
+  position: absolute;
+  width: 48px;
+  height: 2px;
+  top: -2px;
+  left: 81px;
+  background: white;
+}
+.contact-button-gap:nth-child(2) {
+  inset: auto 116px -2px auto;
+}
+.contact-button-gap:nth-child(3) {
+  width: 20px;
+  inset: auto 73px -2px auto;
 }

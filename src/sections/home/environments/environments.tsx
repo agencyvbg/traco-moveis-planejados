@@ -1,4 +1,6 @@
 'use client';
+import { HoverLabel } from '@/components/ui/hover-label';
+
 import { TitleReveal } from '@/animations/title-reveal';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
@@ -14,7 +16,6 @@ import {
 } from 'framer-motion';
 import { projects } from '@/content/projects';
 import { ResponsiveImage } from '@/components/media/responsive-image';
-import { Arrow } from '@/components/ui/arrow';
 import './environments.css';
 function WorkCard({
   index,
@@ -68,7 +69,7 @@ function WorkCard({
         </Link>
         <p>{project.description}</p>
         <Link className="pill-link" href={`/projetos/${project.slug}`}>
-          Saiba mais <Arrow />
+          <HoverLabel variant="v2">Saiba mais</HoverLabel>
         </Link>
       </div>
       <div className="environment-photo">
@@ -112,7 +113,9 @@ export function Environments() {
     >
       <div className="reference-heading">
         <TitleReveal id="environments-title" text="Projetos em destaque" />
-        <span className="reference-badge">Espaços sob medida</span>
+        <span className="reference-badge" data-floating-badge="">
+          Espaços sob medida
+        </span>
       </div>
       <div ref={track} className="environment-track" data-reduced={!!reduced}>
         <div className="environment-list">

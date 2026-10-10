@@ -1,7 +1,7 @@
+import { HoverLabel } from '@/components/ui/hover-label';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PrivacyPreferences } from '@/components/analytics/consent';
-import { WhatsAppLink } from '@/components/ui/whatsapp-link';
 import { contact } from '@/config/contact';
 import { developer } from '@/config/developer';
 import vbgLogo from '@/assets/images/shared/vbg/logo.webp';
@@ -20,32 +20,81 @@ export function Footer() {
               <br />
               Espaços pensados para viver.
             </p>
-            <WhatsAppLink>WhatsApp</WhatsAppLink>
             <a href={`tel:+${contact.whatsappNumber}`}>
               {contact.whatsappDisplay}
             </a>
           </div>
           <nav aria-label="Páginas principais">
-            <h2>Páginas</h2>
-            <Link href="/">Início</Link>
-            <Link href="/sobre">Sobre</Link>
-            <Link href="/servicos">Serviços</Link>
-            <Link href="/contato">Contato</Link>
+            <h2>Navegue</h2>
+            <Link href="/">
+              <HoverLabel>Início</HoverLabel>
+            </Link>
+            <Link href="/sobre">
+              <HoverLabel>Sobre</HoverLabel>
+            </Link>
+            <Link href="/servicos">
+              <HoverLabel>Serviços</HoverLabel>
+            </Link>
+            <Link href="/contato">
+              <HoverLabel>Contato</HoverLabel>
+            </Link>
           </nav>
           <nav aria-label="Projetos e artigos">
-            <h2>Páginas</h2>
-            <Link href="/projetos">Projetos</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/blog/conversa-com-a-fwa">Artigo</Link>
-            <Link href="/projetos/cozinha-encontro">Detalhe do projeto</Link>
+            <h2>Projetos e artigos</h2>
+            <Link href="/projetos">
+              <HoverLabel>Projetos</HoverLabel>
+            </Link>
+            <Link href="/blog">
+              <HoverLabel>Blog</HoverLabel>
+            </Link>
+            <Link href="/blog/conversa-com-a-fwa">
+              <HoverLabel>Artigo</HoverLabel>
+            </Link>
+            <Link href="/projetos/cozinha-encontro">
+              <HoverLabel>Detalhe do projeto</HoverLabel>
+            </Link>
           </nav>
-          <nav aria-label="Informações e privacidade">
+          <div className="footer-information">
             <h2>Informações</h2>
-            <Link href="/informacoes/estilos">Guia de estilos</Link>
-            <Link href="/informacoes/licencas">Licenças</Link>
-            <Link href="/informacoes/alteracoes">Alterações</Link>
+            <p className="footer-instagram">
+              <span className="footer-instagram-icon" aria-hidden="true">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </span>
+              Instagram da Traço
+            </p>
+            <p>
+              Ver perfil no{' '}
+              <span className="footer-google">
+                <span className="tw:sr-only">Google</span>
+                <span aria-hidden="true">
+                  <span className="google-blue">G</span>
+                  <span className="google-red">o</span>
+                  <span className="google-yellow">o</span>
+                  <span className="google-blue">g</span>
+                  <span className="google-green">l</span>
+                  <span className="google-red">e</span>
+                </span>
+              </span>
+            </p>
+            <p>Cuidados com seus móveis</p>
             <PrivacyPreferences />
-          </nav>
+          </div>
         </div>
         <Newsletter />
       </div>

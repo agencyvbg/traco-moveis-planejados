@@ -1,5 +1,6 @@
 'use client';
 import { useState, type FormEvent } from 'react';
+import { HoverLabel } from '@/components/ui/hover-label';
 export function Newsletter() {
   const [complete, setComplete] = useState(false);
   function submit(e: FormEvent<HTMLFormElement>) {
@@ -20,7 +21,9 @@ export function Newsletter() {
           placeholder="Seu e-mail"
           required
         />
-        <button type="submit">Inscrever-se</button>
+        <button type="submit">
+          <HoverLabel>Inscrever-se</HoverLabel>
+        </button>
       </form>
       <small className="demo-note">
         Formulário demonstrativo; não envia seus dados.

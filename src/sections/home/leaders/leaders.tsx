@@ -1,4 +1,6 @@
 'use client';
+import { HoverLabel } from '@/components/ui/hover-label';
+
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import {
@@ -110,7 +112,7 @@ export function Leaders() {
           <span>líderes</span>
         </h2>
         <Link href="/sobre" className="pill-link">
-          Saiba mais
+          <HoverLabel variant="primary">Saiba mais</HoverLabel>
         </Link>
       </div>
       <DemoNote>Quantidade demonstrativa do Ariyana; fotos da Traço.</DemoNote>
