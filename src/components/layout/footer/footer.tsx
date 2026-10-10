@@ -8,6 +8,7 @@ import vbgLogo from '@/assets/images/shared/vbg/logo.webp';
 import { Newsletter } from './newsletter';
 import { FooterReveal } from './footer-reveal';
 import './footer.css';
+
 export function Footer() {
   return (
     <FooterReveal>
@@ -98,6 +99,7 @@ export function Footer() {
         </div>
         <Newsletter />
       </div>
+
       <div className="footer-bottom">
         <Link className="footer-wordmark" href="/">
           {'//TRAÇO'}
