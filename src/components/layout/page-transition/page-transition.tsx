@@ -103,6 +103,21 @@ export function PageTransition() {
       if (!isPlainClick(event) || !(event.target instanceof Element)) return;
       const link = event.target.closest<HTMLAnchorElement>('a[href]');
       if (!link) return;
+      const samePage = new URL(link.href);
+      if (
+        !link.target &&
+        !link.hasAttribute('download') &&
+        samePage.origin === location.origin &&
+        samePage.pathname === location.pathname &&
+        routePaths.has(samePage.pathname) &&
+        !samePage.hash &&
+        !samePage.search
+      ) {
+        event.preventDefault();
+        focusAnchor('#conteudo');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        return;
+      }
       const url = destination(link);
       if (!url) return;
       event.preventDefault();
@@ -163,12 +178,15 @@ export function PageTransition() {
       busy.current = true;
       setPhase(reduced ? 'idle' : 'covered');
     };
-    document.addEventListener('click', click);
+    // Intercept before Next Link's delegated handler changes the pathname.
+    // Otherwise the destination can render before pending is registered,
+    // skipping the route effect that resets scroll under the curtain.
+    document.addEventListener('click', click, true);
     document.addEventListener('pointerover', prefetch);
     document.addEventListener('focusin', prefetch);
     window.addEventListener('popstate', back);
     return () => {
-      document.removeEventListener('click', click);
+      document.removeEventListener('click', click, true);
       document.removeEventListener('pointerover', prefetch);
       document.removeEventListener('focusin', prefetch);
       window.removeEventListener('popstate', back);
